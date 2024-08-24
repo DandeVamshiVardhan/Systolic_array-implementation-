@@ -6,5 +6,5 @@ Design after connecting slave interface
 ![Screenshot 2024-08-24 152325](https://github.com/user-attachments/assets/2576fa4d-cdb7-4424-bd8b-0f60d9b51975)
 System On Chip using microblaze as a processing system
 ![Screenshot 2024-08-24 152800](https://github.com/user-attachments/assets/63d13102-b017-45ee-9543-7fe88a745ea9)
-Outputs obtained after multiplying the matrices specified in helloworld.c.Outputs are represented in iee754 32 bit representation
+Outputs obtained after multiplying the matrices specified in helloworld.c . Outputs are represented in iee754 32 bit representation
 ![Screenshot 2024-08-24 155254](https://github.com/user-attachments/assets/ce247c48-ddb7-486c-abaf-6f0d4c4aad0b)
