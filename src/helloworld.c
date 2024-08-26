@@ -40,7 +40,7 @@
  * ------------------------------------------------
  * | UART TYPE   BAUD RATE                        |
  * ------------------------------------------------
- *   uartns550   9600
+ *   uartns550   115200
  *   uartlite    Configurable only in HW design
  *   ps7_uart    115200 (configured by bootrom/bsp)
  */
@@ -73,52 +73,105 @@ int main()
    // Xil_Out32 is used to write to that particular register
 
 
-           Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*8, 34);    // slv_reg8=weight dimension
-           Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR+ 4*9, 34);     // slv_reg9=input_dimension
-           Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*1, 0);     // slv_reg1 is load_in
-           Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*2, 0);     // slv_reg2 is weight_in
-           Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*3, 0);     // slv_reg3 is start
+           Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*8, 51);    // slv_reg8=weight dimension 33hex
+           Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR + 4*9, 34);     // slv_reg9=input_dimension  22hex
+           Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR + 4*1, 0);     // slv_reg1 is load_in
+           Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 0);     // slv_reg2 is weight_in
+           Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*3, 0);     // slv_reg3 is start
 
 
 
 
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*0, 1069547520);  // slv_reg0 is data
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*0, 1065353216);  // slv_reg0 is data
     	   delay(5);
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*1, 1);   // slv_reg1 is load_in
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*2, 1);  // slv_reg2 is weight_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*1, 1);   // slv_reg1 is load_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 1);  // slv_reg2 is weight_in
     	   delay(5);
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*1, 0);  // slv_reg1 is load_in
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*2, 0);  // slv_reg2 is weight_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*1, 0);  // slv_reg1 is load_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR + 4*2, 0);  // slv_reg2 is weight_in
 
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*0, 1075838976);  // slv_reg0 is data
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*0, 1073741824);  // slv_reg0 is data
     	    delay(5);
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*1, 1);   // slv_reg1 is load_in
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*2, 1);  // slv_reg2 is weight_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*1, 1);   // slv_reg1 is load_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 1);  // slv_reg2 is weight_in
     	   delay(5);
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*1, 0);  // slv_reg1 is load_in
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*2, 0);  // slv_reg2 is weight_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*1, 0);  // slv_reg1 is load_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR + 4*2, 0);  // slv_reg2 is weight_in
 
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*0, 1077936128);  // slv_reg0 is data
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*0, 1077936128);  // slv_reg0 is data
     	    delay(5);
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*1, 1);   // slv_reg1 is load_in
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*2, 1);  // slv_reg2 is weight_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*1, 1);   // slv_reg1 is load_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 1);  // slv_reg2 is weight_in
     	   delay(5);
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*1, 0);  // slv_reg1 is load_in
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*2, 0);  // slv_reg2 is weight_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*1, 0);  // slv_reg1 is load_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 0);  // slv_reg2 is weight_in
 
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*0, 1080033280);  // slv_reg0 is data
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*0, 1082130432);  // slv_reg0 is data
     	    delay(5);
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*1, 1);   // slv_reg1 is load_in
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*2, 1);  // slv_reg2 is weight_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*1, 1);   // slv_reg1 is load_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 1);  // slv_reg2 is weight_in
     	   delay(5);
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*1, 0);  // slv_reg1 is load_in
-    	   Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*2, 0);  // slv_reg2 is weight_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*1, 0);  // slv_reg1 is load_in
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 0);  // slv_reg2 is weight_in
+
+
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*0, 1065353216);  // slv_reg0 is data
+    	    delay(5);
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 1);  // slv_reg2 is weight_in
+    	   delay(5);
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 0);  // slv_reg2 is weight_in
+
+
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*0, 1073741824);  // slv_reg0 is data
+    	    delay(5);
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 1);  // slv_reg2 is weight_in
+    	   delay(5);
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 0);  // slv_reg2 is weight_in
+
+
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*0, 1077936128);  // slv_reg0 is data
+    	    delay(5);
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 1);  // slv_reg2 is weight_in
+    	   delay(5);
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 0);  // slv_reg2 is weight_in
+
+
+
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*0, 1082130432);  // slv_reg0 is data
+    	    delay(5);
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 1);  // slv_reg2 is weight_in
+    	   delay(5);
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 0);  // slv_reg2 is weight_in
+
+
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*0, 1082130432);  // slv_reg0 is data
+    	    delay(5);
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 1);  // slv_reg2 is weight_in
+    	   delay(5);
+
+    	   Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*2, 0);  // slv_reg2 is weight_in
+
+
 
 
 
 
        delay(5);
-       Xil_Out32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*3, 1);     // slv_reg3 is start
+       Xil_Out32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*3, 1);     // slv_reg3 is start
 
 
        delay(10000);
@@ -126,13 +179,13 @@ int main()
 
        // Xil_In32 is used to read that particular register
 
-       r1 = Xil_In32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*4);  // slv_reg4 is mem_data1
-       r2 = Xil_In32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*5);  // slv_reg4 is mem_data1
-       r3 = Xil_In32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*6);  // slv_reg4 is mem_data1
-       r4 =	Xil_In32(XPAR_MATRIX_MULTIPLIER_V1_0_BASEADDR + 4*7);  // slv_reg4 is mem_data1
+       r1 = Xil_In32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*4);  // slv_reg4 is mem_data1
+       r2 = Xil_In32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*5);  // slv_reg5 is mem_data1
+       r3 = Xil_In32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR  + 4*6);  // slv_reg6 is mem_data1
+       r4 =	Xil_In32(XPAR_MATRIX_COLVOLUTION_V_0_BASEADDR + 4*7);  // slv_reg7 is mem_data1
 
-       xil_printf(" %d  %d\n ",r1,r2);
-       xil_printf(" %d  %d\n ",r3,r4);
+       xil_printf(" %d \n  %d \n",r1,r2);
+       xil_printf(" %d \n %d\n ",r3,r4);
 
     cleanup_platform();
     return 0;
